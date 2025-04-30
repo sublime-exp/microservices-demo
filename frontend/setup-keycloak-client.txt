@@ -1,0 +1,21 @@
+Setting up Angular Client in Keycloak
+Before we go ahead and test our application,
+we have to create the Angular Client in the Keycloak server.
+For that open localhost:8181 and login to Keycloak with your admin credentials.
+
+Select the realm - spring-microservices-security-realm
+Click on Clients on the left side menu bar
+Click on the Create client button
+Enter Client ID as angular-client
+Click Next
+Only Select the option - Standard Flow and nothing else, de-select the option Direct access grants that is enabled by default, we don't need it for our use case
+Click Next
+Under the input Valid redirect URIs - provide the value - http://localhost:4200
+Under the input Web origins - provide the value - * to allow requests from all origins.
+Click on Save
+That's all you need to configure the Angular client in Keycloak, we already configured our Angular app to use the client we just created.
+Enable User Registration for Keycloak
+The next thing we want to do is to enable the users to self-register on Keycloak,
+for that open the Realm Settings,
+click on Login,
+and select the User Registration option to enable it.

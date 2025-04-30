@@ -1,0 +1,45 @@
+ng new microservices-shop-frontend
+
+Which stylesheet format would you like to use? - CSS
+Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? N
+
+ng serve
+npm install -D tailwindcss @tailwindcss/cli postcss autoprefixer
+npx tailwindcss init
+
+1. Create a tailwind.config.js manually.
+Create a file named tailwind.config.js in your root project folder:
+module.exports = {
+  content: [
+    "./src/**/*.{html,ts}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+The above configuration will apply tailwind CSS to all the HTML templates in our project.
+To enable CSS, we also have to update the src/styles.css file with the following code:
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+npm uninstall tailwindcss @tailwindcss/postcss @tailwindcss/cli
+npm install tailwindcss@^3.4.1 postcss@^8.4.35 autoprefixer@^10.4.17 --save-dev
+npm uninstall @tailwindcss/postcss
+
+npm install angular-auth-oidc-client
+
+add interceptor jwt
+
+ng g c pages/home-page
+ng g s services/order
+ng g s services/product
+ng g c pages/add-product
+
+docker build -t frontend .
+docker tag frontend:latest ivakis/frontend:latest
+docker push ivakis/frontend:latest
