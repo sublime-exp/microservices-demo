@@ -1,5 +1,5 @@
 # Spring Boot Microservices
-Service oriented architecture (SAO) demo
+Service oriented architecture (SOA) demo
 
 ## Services Overview
 
